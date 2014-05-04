@@ -5,6 +5,8 @@
 #include "RoboGiants.h"
 #include <gl\GL.h>
 #include <gl\GLU.h>
+#include "Renderer.h"
+#include "Drawable.h"
 
 #define MAX_LOADSTRING 100
 
@@ -54,6 +56,13 @@ int APIENTRY _tWinMain(_In_ HINSTANCE hInstance,
 	}
 
 	hAccelTable = LoadAccelerators(hInstance, MAKEINTRESOURCE(IDC_ROBOGIANTS));
+
+	Renderer* renderer = new Renderer();
+	IDrawable placeholder = std::make_shared<Placeholder>();
+
+	renderer->Add(placeholder);
+
+	renderer->Draw();
 
 	while (true)
 	{

@@ -1,3 +1,5 @@
 Debug/
 RoboGiants/Debug/
 ipch/
+*.sdf
+*.suo
